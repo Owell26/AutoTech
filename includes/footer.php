@@ -11,6 +11,15 @@
             }, 500); // Wait for 500ms after last keystroke
         }
 
+        function disableCreateBtn(form) {
+            const btn = document.getElementById('createModuleBtn');
+            if(btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Creating...';
+            }
+            return true;
+        }
+
         // Maintain focus on search input after reload
         document.addEventListener('DOMContentLoaded', function() {
             const searchParams = new URLSearchParams(window.location.search);
