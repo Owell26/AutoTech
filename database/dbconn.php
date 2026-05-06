@@ -6,7 +6,7 @@ $dbname = "auto_tech_classroom";
 $username = '4R2F6LvY6n72wzH.root';
 $password = 'tSsML6qayt3hZAFR';
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
+$conn = mysqli_connect($host, $username, $password, $dbname, $port);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
