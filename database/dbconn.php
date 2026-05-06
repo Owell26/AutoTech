@@ -1,9 +1,9 @@
 <?php
 // Database connection configuration
-$host = 'localhost';
+$host = 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com';
 $dbname = "auto_tech_classroom";
-$username = 'root';
-$password = '';
+$username = '4R2F6LvY6n72wzH.root';
+$password = 'tSsML6qayt3hZAFR';
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
