@@ -1,6 +1,7 @@
 <?php
 // Database connection configuration
 $host = 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com';
+$port = 4000;
 $dbname = "auto_tech_classroom";
 $username = '4R2F6LvY6n72wzH.root';
 $password = 'tSsML6qayt3hZAFR';
