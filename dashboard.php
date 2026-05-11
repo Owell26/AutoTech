@@ -25,13 +25,7 @@
 
         <div class="container-fluid p-4" style="background-color: #f8f9fa; min-height: 100vh;">
             
-            <?php if(isset($_GET['status'])): ?>
-                <div class="alert alert-<?php echo $_GET['status'] == 'success' ? 'success' : 'danger'; ?> alert-dismissible fade show border-0 shadow-sm mb-4" role="alert">
-                    <i class="bi <?php echo $_GET['status'] == 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'; ?> me-2"></i>
-                    <?php echo isset($_GET['msg']) ? $_GET['msg'] : ($_GET['status'] == 'success' ? 'Operation successful!' : 'Something went wrong.'); ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
+            <?php include 'includes/alerts.php'; ?>
 
             <!-- Header: Modern Learning Dashboard -->
             <div class="row align-items-center mb-4">

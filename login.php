@@ -10,12 +10,7 @@
                 <p class="text-muted">Sign in to your account</p>
             </div>
 
-            <?php if(isset($_GET['error'])): ?>
-                <div class="alert alert-danger small py-2"><?php echo $_GET['error']; ?></div>
-            <?php endif; ?>
-            <?php if(isset($_GET['success'])): ?>
-                <div class="alert alert-success small py-2"><?php echo $_GET['success']; ?></div>
-            <?php endif; ?>
+            <?php include 'includes/alerts.php'; ?>
 
             <form action="controller/AuthController.php" method="POST">
                 <div class="mb-3">

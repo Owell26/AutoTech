@@ -125,15 +125,9 @@
                                 <p class="mb-0 opacity-75 small">Help us improve the portal by sending your suggestions or reporting bugs.</p>
                             </div>
                             <div class="card-body p-4">
-                                <?php if(isset($_GET['status'])): ?>
-                                    <div class="alert alert-<?php echo $_GET['status'] == 'success' ? 'success' : 'danger'; ?> alert-dismissible fade show border-0 shadow-sm mb-4" role="alert" style="border-radius: 12px;">
-                                        <i class="bi <?php echo $_GET['status'] == 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'; ?> me-2"></i>
-                                        <?php echo isset($_GET['msg']) ? htmlspecialchars($_GET['msg']) : 'Operation successful'; ?>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php endif; ?>
+                            <?php include 'includes/alerts.php'; ?>
 
-                                <form action="controller/FeedbackController.php" method="POST">
+                            <form action="controller/FeedbackController.php" method="POST">
                                     <div class="mb-4">
                                         <label class="form-label small fw-bold text-muted text-uppercase">Subject</label>
                                         <select name="subject" class="form-select bg-light border-0 py-2 fs-6" required style="border-radius: 10px;">

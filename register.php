@@ -10,21 +10,7 @@
                 <p class="text-muted">Join the AutoTech community</p>
             </div>
 
-            <?php if(isset($_GET['error'])): ?>
-                <div class="alert alert-danger alert-dismissible fade show border-0 shadow-sm mb-4 small" role="alert" style="border-radius: 10px;">
-                    <i class="bi bi-exclamation-triangle me-2"></i>
-                    <?php echo htmlspecialchars($_GET['error']); ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
-
-            <?php if(isset($_GET['success'])): ?>
-                <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4 small" role="alert" style="border-radius: 10px;">
-                    <i class="bi bi-check-circle me-2"></i>
-                    <?php echo htmlspecialchars($_GET['success']); ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
+            <?php include 'includes/alerts.php'; ?>
 
             <form action="controller/AuthController.php" method="POST">
                 <div class="mb-3">

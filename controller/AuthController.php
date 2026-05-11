@@ -31,15 +31,21 @@ if (isset($_POST['registerUser'])) {
     $check_email_run = mysqli_query($conn, $check_email);
 
     if (mysqli_num_rows($check_email_run) > 0) {
-        header("Location: ../register.php?error=Email already exists");
+        $_SESSION['status'] = 'error';
+        $_SESSION['msg'] = 'Email already exists';
+        header("Location: ../register.php");
         exit();
     } else {
         $sql = "INSERT INTO users (fullname, email, password, role, course, year_level, section) VALUES ('$fullname', '$email', '$password', '$role', '$course', '$year_level', '$section')";
         if (mysqli_query($conn, $sql)) {
-            header("Location: ../login.php?success=Registration successful! Please login.");
+            $_SESSION['status'] = 'success';
+            $_SESSION['msg'] = 'Registration successful! Please login.';
+            header("Location: ../login.php");
             exit();
         } else {
-            header("Location: ../register.php?error=Registration failed");
+            $_SESSION['status'] = 'error';
+            $_SESSION['msg'] = 'Registration failed';
+            header("Location: ../register.php");
             exit();
         }
     }
@@ -72,6 +78,9 @@ if (isset($_POST['loginUser'])) {
                     setcookie('remember_token', $token, time() + (30 * 24 * 60 * 60), '/');
                 }
             }
+
+            $_SESSION['status'] = 'success';
+            $_SESSION['msg'] = 'Welcome back, ' . $user['fullname'] . '!';
 
             // Redirect based on role
             if ($user['role'] == 'admin') {

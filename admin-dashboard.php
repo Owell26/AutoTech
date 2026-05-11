@@ -30,13 +30,7 @@ $modules_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as tota
                 <p class="text-muted small">System monitoring and configuration</p>
             </div>
 
-            <?php if(isset($_GET['status'])): ?>
-                <div class="alert alert-<?php echo $_GET['status'] == 'success' ? 'success' : 'danger'; ?> alert-dismissible fade show border-0 shadow-sm mb-4" role="alert">
-                    <i class="bi <?php echo $_GET['status'] == 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'; ?> me-2"></i>
-                    <?php echo isset($_GET['msg']) ? htmlspecialchars($_GET['msg']) : 'Operation successful'; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
+            <?php include 'includes/alerts.php'; ?>
 
             <!-- Stats Row -->
             <div class="row g-4 mb-5">

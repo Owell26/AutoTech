@@ -10,9 +10,13 @@ if (isset($_POST['sendFeedback'])) {
     $sql = "INSERT INTO feedback (user_id, subject, message) VALUES ('$user_id', '$subject', '$message')";
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: ../feedback.php?status=success&msg=Your feedback has been sent! Thank you for helping us improve.");
+        $_SESSION['status'] = 'success';
+        $_SESSION['msg'] = 'Your feedback has been sent! Thank you for helping us improve.';
+        header("Location: ../feedback.php");
     } else {
-        header("Location: ../feedback.php?status=error&msg=Failed to send feedback. Please try again.");
+        $_SESSION['status'] = 'error';
+        $_SESSION['msg'] = 'Failed to send feedback. Please try again.';
+        header("Location: ../feedback.php");
     }
     exit();
 }
@@ -25,9 +29,13 @@ if (isset($_GET['update_status']) && $_SESSION['role'] === 'admin') {
     $sql = "UPDATE feedback SET status = '$new_status' WHERE feedback_id = '$f_id'";
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: ../admin-dashboard.php?status=success&msg=Feedback status updated.");
+        $_SESSION['status'] = 'success';
+        $_SESSION['msg'] = 'Feedback status updated.';
+        header("Location: ../admin-dashboard.php");
     } else {
-        header("Location: ../admin-dashboard.php?status=error&msg=Failed to update feedback status.");
+        $_SESSION['status'] = 'error';
+        $_SESSION['msg'] = 'Failed to update feedback status.';
+        header("Location: ../admin-dashboard.php");
     }
     exit();
 }
