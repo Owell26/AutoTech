@@ -7,6 +7,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Configure Apache to allow .htaccess overrides
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
 # Copy project files to the container
 COPY . /var/www/html/
 

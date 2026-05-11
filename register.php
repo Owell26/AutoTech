@@ -73,7 +73,7 @@
                 </script>
                 <button type="submit" name="registerUser" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm mb-3" style="border-radius: 10px;">Register</button>
                 <div class="text-center">
-                    <p class="small text-muted mb-0">Already have an account? <a href="login.php" class="text-primary text-decoration-none fw-bold">Login</a></p>
+                    <p class="small text-muted mb-0">Already have an account? <a href="login" class="text-primary text-decoration-none fw-bold">Login</a></p>
                 </div>
             </form>
         </div>

@@ -27,7 +27,7 @@
                 </div>
                 <button type="submit" name="loginUser" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm mb-3" style="border-radius: 10px;">Login</button>
                 <div class="text-center">
-                    <p class="small text-muted mb-0">Don't have an account? <a href="register.php" class="text-primary text-decoration-none fw-bold">Register</a></p>
+                    <p class="small text-muted mb-0">Don't have an account? <a href="register" class="text-primary text-decoration-none fw-bold">Register</a></p>
                 </div>
             </form>
         </div>
