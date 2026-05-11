@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
 // Protect pages: redirect to login if not logged in and not on login/register pages
 $current_page = basename($_SERVER['PHP_SELF']);
 if (!isset($_SESSION['user_id']) && !in_array($current_page, ['login.php', 'register.php'])) {
-    header("Location: login");
+    header("Location: login.php");
     exit();
 }
 ?>

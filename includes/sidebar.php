@@ -16,20 +16,20 @@
     <div class="list-group list-group-flush px-3 mt-4 custom-scrollbar">
         <label class="text-uppercase text-muted fw-bold mb-2 ps-3" style="font-size: 0.65rem; letter-spacing: 1px;">Main Menu</label>
         
-        <a href="dashboard" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="dashboard.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-grid-1x2-fill me-3 fs-5"></i>
             <span class="fw-medium">Dashboard</span>
         </a>
 
         <?php if($_SESSION['role'] == 'admin'): ?>
-        <a href="admin-dashboard" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'admin-dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="admin-dashboard.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'admin-dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-speedometer2 me-3 fs-5"></i>
             <span class="fw-medium">Admin Monitoring</span>
         </a>
         <?php endif; ?>
 
         <?php if($_SESSION['role'] !== 'admin'): ?>
-        <a href="students" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'students.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="students.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'students.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-people-fill me-3 fs-5"></i>
             <span class="fw-medium">Students</span>
         </a>
@@ -37,24 +37,24 @@
 
         <label class="text-uppercase text-muted fw-bold mt-4 mb-2 ps-3" style="font-size: 0.65rem; letter-spacing: 1px;">Academic</label>
 
-        <a href="schedule" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'schedule.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="schedule.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'schedule.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-calendar-check-fill me-3 fs-5"></i>
             <span class="fw-medium">Schedule</span>
         </a>
 
-        <a href="reports" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'reports.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="reports.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'reports.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-bar-chart-steps me-3 fs-5"></i>
             <span class="fw-medium">Reports</span>
         </a>
 
         <label class="text-uppercase text-muted fw-bold mt-4 mb-2 ps-3" style="font-size: 0.65rem; letter-spacing: 1px;">System</label>
 
-        <a href="settings" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'settings.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="settings.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'settings.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-gear-fill me-3 fs-5"></i>
             <span class="fw-medium">Settings</span>
         </a>
 
-        <a href="feedback" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'feedback.php') ? 'active-link' : 'text-secondary'; ?>">
+        <a href="feedback.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'feedback.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-chat-right-quote-fill me-3 fs-5"></i>
             <span class="fw-medium">Feedback</span>
         </a>
