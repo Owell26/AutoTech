@@ -84,7 +84,7 @@ if (isset($_POST['loginUser'])) {
 
             // Redirect based on role
             if ($user['role'] == 'admin') {
-                header("Location: ../admin-dashboard.php");
+                header("Location: ../admin-dashboard");
                 exit();
             }
 
@@ -95,22 +95,31 @@ if (isset($_POST['loginUser'])) {
                 $_SESSION['section'] = $user['section'];
             }
 
-            header("Location: ../dashboard.php");
+            header("Location: ../dashboard");
             exit();
         } else {
-            header("Location: ../login.php?error=Incorrect password");
+            $_SESSION['status'] = 'error';
+            $_SESSION['msg'] = 'Invalid password';
+            header("Location: ../login");
             exit();
         }
     } else {
-        header("Location: ../login.php?error=User not found");
+        $_SESSION['status'] = 'error';
+        $_SESSION['msg'] = 'Email not found';
+        header("Location: ../login");
         exit();
     }
 }
 
 // Logout Logic
 if (isset($_GET['logout'])) {
+    if (isset($_COOKIE['remember_token'])) {
+        $token = $_COOKIE['remember_token'];
+        mysqli_query($conn, "DELETE FROM user_tokens WHERE token = '$token'");
+        setcookie('remember_token', '', time() - 3600, '/');
+    }
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: ../login");
     exit();
 }
 ?>
