@@ -49,6 +49,12 @@ if (isset($_POST['loginUser'])) {
             $_SESSION['role'] = $user['role'];
             $_SESSION['email'] = $user['email'];
             
+            // Redirect based on role
+            if ($user['role'] == 'admin') {
+                header("Location: ../admin-dashboard.php");
+                exit();
+            }
+
             // Store student info in session if role is student
             if ($user['role'] == 'student') {
                 $_SESSION['course'] = $user['course'];

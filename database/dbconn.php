@@ -16,3 +16,15 @@ mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL);
 if (!mysqli_real_connect($conn, $host, $username, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL)) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+// $host = 'localhost';
+// $dbname = "auto_tech_classroom";
+// $username = 'root';
+// $password = '';
+
+// // Initialize MySQLi
+// $conn = mysqli_connect($host, $username, $password, $dbname);
+
+// if (!$conn) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }

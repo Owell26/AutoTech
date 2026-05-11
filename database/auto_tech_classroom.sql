@@ -199,7 +199,7 @@ CREATE TABLE `users` (
   `fullname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('instructor','student') NOT NULL,
+  `role` enum('instructor','student','admin') NOT NULL,
   `course` varchar(100) NOT NULL,
   `year_level` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
@@ -212,9 +212,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `email`, `password`, `role`, `course`, `year_level`, `section`, `profile_pic`, `created_at`) VALUES
-(1, 'John Doe', 'ctech@unp.edu.ph', 'johndoe12345', 'instructor', '', '', '', 'profile_1_1778051595.png', '2026-05-06 03:46:20'),
+(1, 'John Doe', 'ctech@unp.edu.ph', '12345678', 'instructor', '', '', '', 'profile_1_1778051595.png', '2026-05-06 03:46:20'),
 (2, 'Owell Venne Kim T. Seguban', 'owellvennekimseguban58@gmail.com', '12345678', 'student', 'BSInfoTech', '4th Year', 'A', '', '2026-05-06 03:50:21'),
-(3, 'John Cena', 'johncena@gmail.com', 'johncena', 'student', 'BS Info tech', '4th Year', 'A', '', '2026-05-06 07:26:37');
+(3, 'System Admin', 'admin@autotech.edu.ph', 'admin123', 'admin', '', '', '', '', '2026-05-11 13:30:00'),
+(4, 'John Cena', 'johncena@gmail.com', 'johncena', 'student', 'BS Info tech', '4th Year', 'A', '', '2026-05-06 07:26:37');
 
 --
 -- Indexes for dumped tables
@@ -325,3 +326,27 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `status` enum('pending','reviewed','resolved') DEFAULT 'pending',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`feedback_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `system_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `system_name` varchar(255) NOT NULL DEFAULT 'AutoTech',
+  `system_logo` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `system_settings` (`system_name`) VALUES ('AutoTech');

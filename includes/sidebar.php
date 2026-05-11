@@ -13,7 +13,7 @@
         </button>
     </div>
     
-    <div class="list-group list-group-flush px-3 mt-4 overflow-auto custom-scrollbar" style="height: calc(100vh - 160px); padding-bottom: 80px;">
+    <div class="list-group list-group-flush px-3 mt-4 custom-scrollbar">
         <label class="text-uppercase text-muted fw-bold mb-2 ps-3" style="font-size: 0.65rem; letter-spacing: 1px;">Main Menu</label>
         
         <a href="dashboard.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
@@ -21,7 +21,14 @@
             <span class="fw-medium">Dashboard</span>
         </a>
 
-        <?php if($_SESSION['role'] == 'instructor'): ?>
+        <?php if($_SESSION['role'] == 'admin'): ?>
+        <a href="admin-dashboard.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'admin-dashboard.php') ? 'active-link' : 'text-secondary'; ?>">
+            <i class="bi bi-speedometer2 me-3 fs-5"></i>
+            <span class="fw-medium">Admin Monitoring</span>
+        </a>
+        <?php endif; ?>
+
+        <?php if($_SESSION['role'] !== 'admin'): ?>
         <a href="students.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'students.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-people-fill me-3 fs-5"></i>
             <span class="fw-medium">Students</span>
@@ -45,6 +52,11 @@
         <a href="settings.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'settings.php') ? 'active-link' : 'text-secondary'; ?>">
             <i class="bi bi-gear-fill me-3 fs-5"></i>
             <span class="fw-medium">Settings</span>
+        </a>
+
+        <a href="feedback.php" class="list-group-item list-group-item-action border-0 rounded-3 py-3 px-3 mb-1 d-flex align-items-center transition-all <?php echo (basename($_SERVER['PHP_SELF']) == 'feedback.php') ? 'active-link' : 'text-secondary'; ?>">
+            <i class="bi bi-chat-right-quote-fill me-3 fs-5"></i>
+            <span class="fw-medium">Feedback</span>
         </a>
     </div>
 

@@ -11,7 +11,14 @@
                 <button class="btn btn-outline-secondary d-lg-none me-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-wrapper">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">AutoTech</a>
+                <?php if($system_logo): ?>
+                    <img src="uploads/system/<?php echo $system_logo; ?>" width="40" height="40" class="rounded-circle me-2">
+                <?php else: ?>
+                    <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                        <i class="bi bi-cpu-fill text-white fs-5"></i>
+                    </div>
+                <?php endif; ?>
+                <a class="navbar-brand fw-bold" href="dashboard.php"><?php echo $system_name; ?></a>
                 <!-- Rest of your navbar code... -->
             </div>
         </nav>
