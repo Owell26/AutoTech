@@ -26,6 +26,10 @@
                     <label class="form-label small fw-bold text-muted text-uppercase">Password</label>
                     <input type="password" name="password" class="form-control form-control-lg bg-light border-0 fs-6 shadow-none" placeholder="Enter password" required style="border-radius: 10px;">
                 </div>
+                <div class="mb-4 form-check">
+                    <input type="checkbox" name="remember_me" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label small text-muted" for="rememberMe">Remember me on this device</label>
+                </div>
                 <button type="submit" name="loginUser" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm mb-3" style="border-radius: 10px;">Login</button>
                 <div class="text-center">
                     <p class="small text-muted mb-0">Don't have an account? <a href="register.php" class="text-primary text-decoration-none fw-bold">Register</a></p>
